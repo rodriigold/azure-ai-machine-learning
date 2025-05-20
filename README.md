@@ -18,10 +18,10 @@ Repositório para documentar o processo de criação de um **modelo de previsão
 
 2. Próximo passo foi começar um novo **trabalho de Machine Learning Automatizado**. Esse processo foi dentro do chamado **Launch Studio**, do Azure. É nessa etapa que é configurado todo o processo de aprendizado de modelo, incluindo a inserção dos dados, carga de trabalho, quantos algoritmos diferentes serão testados, quantas tentativas serão feitas e parâmetros relacionados à validação. O treinamento é feito numa máquina virtual fornecida pelo Azure, e como se trata de um projeto simples de aprendizado, o processo é relativamente rápido (8 - 15min). Quanto mais algoritmos forem testatos e quanto mais rigoroso for o treinamento e validação, mais processamento será gasto, porém, melhor será o resultado.
 
-3. Com o treinamento feito, já é possível ver alguns resultados. O próximo passo, para poder testar o modelo, é fazer o **deploy**. Processo que é simples e rápido mas que pode gerar alguns erros referentes à [falta de registro em alguns proveores de recursos da Microsoft](https://learn.microsoft.com/en-us/azure/azure-resource-manager/troubleshooting/error-register-resource-provider?tabs=azure-cli) (Caso você tenha se deparado com um erro parecido, essa foi a solução que funcionou pra mim: [learn.microsoft.com](https://learn.microsoft.com/en-us/answers/questions/2129910/resource-provider-(n-a)-isnt-registered-with-subsc)). Com o modelo feito, é possível testá-lo o compará-lo, por conta própria, com a base de dados.
+3. Com o treinamento feito, já é possível ver alguns resultados. O próximo passo, para poder testar o modelo, é fazer o **deploy**. Processo que é simples e rápido mas que pode gerar alguns erros referentes à [falta de registro em alguns provedores de recursos da Microsoft](https://learn.microsoft.com/en-us/azure/azure-resource-manager/troubleshooting/error-register-resource-provider?tabs=azure-cli) (Caso você tenha se deparado com um erro parecido, essa foi a solução que funcionou pra mim: [learn.microsoft.com](https://learn.microsoft.com/en-us/answers/questions/2129910/resource-provider-(n-a)-isnt-registered-with-subsc)). Com o modelo feito, é possível testá-lo o compará-lo, por conta própria, com a base de dados.
 
 ## Resultados
-A seguir, alguns gráficos referentes ao resultado do treinamento. **Lembrando que o objetivo foi criar uma IA, com carga de trabalho regressiva, para prever o número de alugueis de biciletas em determinado dia, com base em alguns dados.**
+A seguir, alguns gráficos referentes ao resultado do treinamento. **Lembrando que o objetivo foi criar uma IA, com carga de trabalho regressiva, para prever o número de alugueis de bicicletas em determinado dia, com base em alguns dados.**
 ![image](https://github.com/user-attachments/assets/14af88cb-b95e-401b-bf73-c9dad1cfdb3c)
 *(O gráfico acima compara os valores reais e valores previstos)*
 <br>
@@ -47,7 +47,7 @@ O **RESULTADO REAL** é: **331 aluguéis** <br>
 O **RESULTADO PREVISTO** é (aproximadamente): **450 aluguéis**
 <br>
 <br>
-Confirmando o que foi descrito nos gráficos acima, onde há uma diferença entre os valores previstos e os reais quando pegamos um dos primeiros dias que constam na base de dados. Porém, se pegarmos os dados do último que consta na base de dados, as coisas mudam.
+Confirmando o que foi descrito nos gráficos acima, onde há uma diferença entre os valores previstos e os reais quando pegamos um dos primeiros dias que constam na base de dados. Porém, se pegarmos os dados do último dia que consta na base de dados, essa diferença se inverte.
 <br>
 
 **Usando os parâmetros do 732° dia fornecido pela base de dados (último):** <br>
